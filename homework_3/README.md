@@ -1,42 +1,32 @@
 # Lab3 实验报告 - ESI学科数据获取及分析
 
-## 1. 网站截图
+## 1.作业说明  
+ecnu_analysis.ipynb 为主数据分析与可视化 notebook ,爬虫主要代码为 crawler/esi_clarivate_crawler.py .
 
-![alt text](images/login.png)
-(https://access.clarivate.com/login?app=esi)
-![alt text](images/main.png)  
-(https://esi.clarivate.com/)  
 
-## 2. 项目结构说明  
-
+## 2.项目结构  
 
 本项目结构如下：
 
-### 根目录
-- `ecnu_analysis.ipynb`：主数据分析与可视化 notebook。
-- `README.md`：项目说明文档。
+```
+homework_3/
+├── ecnu_analysis.ipynb           # 主数据分析与可视化 notebook
+├── ecnu_analysis.py              # 分析相关 Python 脚本
+├── README.md                     # 项目说明文档
+├── crawler/                      # 爬虫相关
+│   ├── esi_clarivate_crawler.py  # 优化版 ESI 数据爬虫脚本
+│   ├── login.py                  # 初版可读性差 ESI 数据爬虫脚本
+│   └── config.json               # 爬虫配置文件
+├── downloads/                    # 学科领域原始/转码 csv 数据
+├── scripts/                      # 数据转码UTF-8及测试脚本与数据
+│   ├── test_read_utf-8.py   
+│   ├── ecnu_analysis.py
+│   ├── transfer_to_utf-8.py
+│   └── ecnu_analysis_results.csv
+├── chromedriver-win64/           # chromedriver 及相关依赖
+└── images/                       # README文档使用的图片
+```
 
-### crawler/ 目录
-- `esi_clarivate_crawler.py`：经大模型优化版 ESI 数据爬虫脚本。
-- `login.py`：初版 ESI 数据爬虫脚本，可读性差。
-- `config.json`：爬虫配置文件（存放账号、密码、路径等参数）。 - ignore
-
-### downloads/ 目录
-- 存放所有学科领域的原始/转码 csv 数据文件。
-
-### original/ 目录 - ignore
-- 存放爬虫原始导出的 csv 文件备份。
-
-### scripts/ 目录
-- `transfer_to_utf-8.py`：数据转码为`UTF-8`脚本。
-- `test_read_utf-8.py`, `ecnu_analysis.py`：转码后的测试脚本。
-- `ecnu_analysis_results`：测试输出数据。
-   
-### chromedriver-win64/ 目录
-- chromedriver 及相关依赖文件。
-
-### images/ 目录
-- 存放`README.md`的关联图片。 
 
 ## 3. 环境配置
 
@@ -63,13 +53,23 @@ pip install pandas numpy matplotlib seaborn selenium
 ```  
 请根据实际情况填写账号、密码和路径。  
 
-## 实验步骤  
+
+## 4.实验步骤  
 
 1. 运行`esi_clarivate_crawler.py`将爬取的csv数据，存放在downloads文件夹  
 2. 运行`transfer_to_utf-8.py`将数据转码为`UTF-8`格式，可运行`test_read_utf-8.py`检查转码是否正确。  
 3. 运行`ecnu_analysis.ipynb`进行数据分析。  
 
-## 实验收获   
+
+## 5. 网站截图
+
+![alt text](images/login.png)
+(https://access.clarivate.com/login?app=esi)
+![alt text](images/main.png)  
+(https://esi.clarivate.com/)  
+
+
+## 6.实验收获   
 
 #### 1. 定位二级菜单时多用`ctrl + F`检查路径是否唯一  
 
