@@ -1,2 +1,10 @@
 # 忽略所有PDF文件
 *.pdf
+# 忽略homework_3里面的json配置文件
+homework_3/crawler/config.json
+# 忽视homework_3里面的学习文件
+homework_3/html_learn
+# 忽视homework_3里面的第一次下载的csv文件
+homework_3/original
+# 忽视jupyter的检查点文件夹
+**/.ipynb_checkpoints
