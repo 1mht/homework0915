@@ -11,7 +11,6 @@ ecnu_analysis.ipynb 为主数据分析与可视化 notebook ,爬虫主要代码�
 ```
 homework_3/
 ├── ecnu_analysis.ipynb           # 主数据分析与可视化 notebook
-├── ecnu_analysis.py              # 分析相关 Python 脚本
 ├── README.md                     # 项目说明文档
 ├── crawler/                      # 爬虫相关
 │   ├── esi_clarivate_crawler.py  # 优化版 ESI 数据爬虫脚本
