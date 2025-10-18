@@ -14,3 +14,5 @@ __MACOSX
 homework_4/config.json
 # 忽视homework_4里面的todo
 homework_4/todo
+# 忽视obsidian的配置文件
+.obsidian

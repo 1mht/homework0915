@@ -1,21 +1,29 @@
 # Lab4 实验报告 - ESI学科数据导入数据库与查询
 
 ## 1. 作业说明
-实现了优化schema并导入 MySQL 数据库，进行作业中的数据查询。
+实现了优化schema并导入 MySQL 数据库，进行作业中的数据查询和数据分析。
 
-主要脚本：
+主要文件：
 - preprocess.py：数据预处理与导入 MySQL 脚本
 - SQLscripts/：建表与索引 SQL 脚本
 - results/：查询结果导出
+- analysis.ipynb: 数据分析notebook  
 
-## 2. 项目结构
+## 2.MySQL数据库截图
+
+![数据库数据](pictures/data.png)  
+
+![数据库属性](pictures/attr.png)
+
+## 3. 项目结构
 
 ```
 homework_4/
 ├── preprocess.py                  # 数据预处理与导入 MySQL 脚本
-├── README.md                      # 项目说明文档
 ├── test.py                        # 测试与 MySQL 数据库的连接
 ├── config.json                    # 连接 MySQL 配置文件 *ignore
+├── analysis.ipynb                 # 主数据分析与可视化 notebook
+├── README.md                      # 项目说明文档
 ├── results/                       # 查询结果导出
 │    ├── esi_data_ecnu_rankings.csv     # 华东师范大学各学科排名
 │    ├── esi_data_mainland_rankings.csv # 中国大陆大学表现
@@ -29,6 +37,7 @@ homework_4/
 │    ├── create.sql                     # 建表语句
 │    ├── create_with_index.sql          # 建表+索引语句
 │    └── add_index.sql                  # 已有表增加索引语句
+├── pictures/                      # 数据库截图信息
 └── download/                      # 学科领域原始数据
 ```
 
@@ -52,7 +61,7 @@ homework_4/
 pip install pandas sqlalchemy pymysql
 ```
 
-## 3. 数据库结构说明
+## 4. 数据库结构说明
 
 - 表名：esi_data
 - 主键：filter_value + subject_rank（联合主键）
@@ -66,16 +75,16 @@ pip install pandas sqlalchemy pymysql
   - top_papers BIGINT
   - filter_value VARCHAR(255)
 
-## 4. SQL脚本说明
+## 5. SQL脚本说明
 - create.sql：标准建表语句，含联合主键
 - add_index.sql：已有表增加索引，提升 institution/country_region/filter_value 查询效率
 - create_with_index.sql：建表并加速索引，适合大数据量分析
 
-## 5. 查询与分析示例
+## 6. 查询与分析示例
 - 查询华东师范大学各学科排名
 - 查询中国大陆大学各学科表现
 - 分析全球不同区域学科表现
 
-## 6.实验收获
+## 7.实验收获
 - 学习了导入 MySQL数据库的基本操作，一些简单的查询脚本
-- 简单理解了数据预处理的逻辑，学会了设置一个合适的schema
+- 简单理解了数据预处理的逻辑，学会了设置一个合适的schema，设置联合主键。
