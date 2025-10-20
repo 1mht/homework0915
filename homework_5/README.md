@@ -10,8 +10,7 @@
 
 ## 数据来源
 - 直接读取 Homework 4 已导入的 MySQL 表 `esi_data`。
-- 需提供 `homework_4/config.json`（包含 MySQL 连接信息），Notebook 将通过相对路径 `../homework_4/config.json` 读取。
-- 若路径不适用，可设置环境变量 `CFG_PATH_OVERRIDE` 指向该配置文件绝对路径。
+- 需提供 `config.json`（包含 MySQL 连接信息），Notebook 将通过相对路径 `/config.json` 读取。
 
 config.json 参考：
 ```json
@@ -23,17 +22,14 @@ config.json 参考：
 }
 ```
 
-## 环境与依赖
-- Python 3.9+（建议）
-- 依赖包：pandas、numpy、matplotlib、seaborn、scikit-learn、sqlalchemy、pymysql、joblib、pyarrow
-- 可直接使用本目录下的 `requirements.txt` 安装
+## 依赖包
+pandas、numpy、matplotlib、seaborn、scikit-learn、sqlalchemy、pymysql、joblib、pyarrow
 
 ## 目录结构（与本任务相关）
 ```
 homework_5/
-├── analysis.ipynb          # 本作业主 Notebook（仅包含任务 8/9/10）
+├── analysis.ipynb          # 本作业主 Notebook
 ├── README.md               # 本说明文档
-├── requirements.txt        # 依赖清单
 └── results/                # 运行输出（自动生成）
     ├── cache/                       # 数据缓存（feather/parquet）
     ├── institution_clusters.csv     # 任务8：高校分群结果
@@ -57,10 +53,3 @@ homework_5/
 - 聚类：KMeans(k=3..12) 通过轮廓系数 / Calinski-Harabasz 选 k；t-SNE/PCA 可视化。
 - 相似高校：标准化特征空间上用余弦相似度的近邻检索，支持按国家过滤。
 - 排名预测：每学科独立建模（RandomForest / HistGB），评估 MAE / RMSE / Spearman，支持超参搜索。
-
-## 常见问题
-- 配置找不到：设置 `CFG_PATH_OVERRIDE` 为 `config.json` 的绝对路径后重试。
-- 图表中文：可在 Notebook 顶部设置中文字体（SimHei / Microsoft YaHei）。
-
-## 致谢
-本任务基于 Homework 4 的数据准备与清洗成果，仅保留并延展 8/9/10 三项分析与建模内容。
