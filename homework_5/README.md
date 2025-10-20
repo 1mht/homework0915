@@ -1,6 +1,6 @@
 # Homework 5 实验说明 - 高校分群、ECNU 画像与学科排名预测（任务 8/9/10）
 
-本作业在 Homework 4 已完成的数据导入基础上，仅聚焦以下三项任务：
+本作业在 Homework 4 已完成的数据导入基础上，完成以下三项任务：
 
 - 任务 8：结合 ESI 学科排名数据，对全球高校进行分群；并检索与华东师范大学（ECNU）相似的高校。
 - 任务 9：通过探索性分析，为华东师范大学构建“学科画像”。
@@ -30,6 +30,7 @@ pandas、numpy、matplotlib、seaborn、scikit-learn、sqlalchemy、pymysql、jo
 homework_5/
 ├── analysis.ipynb          # 本作业主 Notebook
 ├── README.md               # 本说明文档
+├── test.py                 # 测试与 MySQL 数据库的连接
 └── results/                # 运行输出（自动生成）
     ├── cache/                       # 数据缓存（feather/parquet）
     ├── institution_clusters.csv     # 任务8：高校分群结果
