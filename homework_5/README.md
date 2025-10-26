@@ -1,12 +1,11 @@
 # Homework 5 实验说明 - 高校分群、ECNU 画像与学科排名预测（任务 8/9/10）
 
+核心实验报告 Notebook：`homework_5/analysis.ipynb`
 本作业在 Homework 4 已完成的数据导入基础上，完成以下三项任务：
 
 - 任务 8：结合 ESI 学科排名数据，对全球高校进行分群；并检索与华东师范大学（ECNU）相似的高校。
 - 任务 9：通过探索性分析，为华东师范大学构建“学科画像”。
 - 任务 10：利用数据建模方式，对各学科构建排名预测模型，并评估效果。
-
-核心 Notebook：`homework_5/analysis.ipynb`
 
 ## 数据来源
 - 直接读取 Homework 4 已导入的 MySQL 表 `esi_data`。
@@ -37,20 +36,5 @@ homework_5/
     ├── cluster_rank_percentile_mean.csv
     ├── similar_to_ECNU.csv          # 任务8：相似高校
     ├── ecnu_subject_profile_compare.csv  # 任务9：ECNU 与全局/同簇均值对比
-    ├── subject_rank_model_scores_rf.csv   # 任务10：模型评估汇总
-    └── models_/rf/*.joblib          # （可选）持久化模型
+    └── subject_rank_model_scores_rf.csv   # 任务10：模型评估汇总
 ```
-
-## 运行步骤
-1) 打开并依序运行 `analysis.ipynb`：
-   - 第 1 节：连接数据库并加载 `esi_data`（首次会缓存到 `results/cache/`）。
-   - 第 2-5 节：数据清洗、特征构建、聚类与可视化（任务 8）。
-   - 第 6-7 节：近邻检索相似高校、ECNU 画像（任务 8/9）。
-   - 第 8-15 节：学科排名预测的特征工程、切分、训练、评估与导出（任务 10）。
-2) 输出文件将写入 `homework_5/results/`，可直接用于报告与复查。
-
-## 技术要点摘要
-- 高校×学科特征：rank_percentile（小优）、cites_per_paper z 分数、top_papers 学科内占比；整体 StandardScaler。
-- 聚类：KMeans(k=3..12) 通过轮廓系数 / Calinski-Harabasz 选 k；t-SNE/PCA 可视化。
-- 相似高校：标准化特征空间上用余弦相似度的近邻检索，支持按国家过滤。
-- 排名预测：每学科独立建模（RandomForest / HistGB），评估 MAE / RMSE / Spearman，支持超参搜索。
