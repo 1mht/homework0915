@@ -16,7 +16,6 @@ warnings.filterwarnings('ignore')
 
 
 import matplotlib
-import matplotlib.pyplot as plt
 # 显式使用中文字体（优先使用系统已安装的 SimHei / Microsoft YaHei）
 matplotlib.rcParams['font.sans-serif'] = ['SimHei']
 matplotlib.rcParams['axes.unicode_minus'] = False # 解决负号变方块的问题
