@@ -4,14 +4,14 @@
 ## 我怎么理解这两个任务
 
 ### 任务 11：深度学习排名预测模型（按学科）
-- 我要用深度学习把“学科相关的输入特征”映射到“学科排名（或百分位）”。
-- 我选了 PyTorch 写一个 MLP（多层感知机），因为它上手快、改网络结构方便。
-- 我用的评估指标主要是 MSE、MAPE、MAE、R²：一起看更全面，避免只盯着一个数。
+- 用深度学习把“学科相关的输入特征”映射到“学科排名（或百分位）”。
+- 选了 PyTorch 写一个 MLP（多层感知机），因为它上手快、改网络结构方便。
+- 评估指标主要是 MSE、MAPE、MAE、R²：一起看更全面，避免只盯着一个数。
 
 ### 任务 12：ESI 数据聚类 + 找相似高校
 - 先把每个高校在不同学科上的表现（排名百分位、被引强度、顶尖论文率等）做成一个特征向量。
 - 用 KMeans 在这个向量空间聚类；再用余弦相似度找出和 ECNU 最像的高校。
-- 我还画了图，帮助理解每个簇的分布和 ECNU 附近的学校长什么样。
+- 画图帮助理解每个簇的分布和 ECNU 附近的学校长什么样。
 
 ---
 
@@ -41,11 +41,12 @@ python .\clustering_analysis.py
 ## 项目结构
 ```
 homework_6/
+├── report.md                       # 主要的实验报告md文件
 ├── deep_learning_ranking.py        # 任务11：深度学习排名预测（PyTorch）
 ├── clustering_analysis.py          # 任务12：ESI 聚类与相似高校
 ├── utils.py                        # 数据读取与特征工程工具
-├── config.json                     # 数据库配置（mysql+pymysql）
-└── results/                        # 输出目录（自动创建）
+├── config.json                     # 数据库配置（mysql）
+└── results/                        # 输出目录
         ├── deep_learning_scores.csv
         ├── deep_learning_results.png
         ├── similar_schools_dl.csv
