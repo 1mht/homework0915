@@ -8,19 +8,14 @@ __MACOSX
 todo
 # 忽视obsidian的配置文件
 .obsidian
+# 忽略json配置文件
+**/config.json
 
-# 忽略homework_3里面的json配置文件
-homework_3/crawler/config.json
 # 忽视homework_3里面的学习文件
 homework_3/html_learn
 # 忽视homework_3里面的第一次下载的csv文件
 homework_3/original
 
-# 忽视homework_4里面的连接MySQL的配置文件
-homework_4/config.json
-
 # 忽视homework_6里面的学习文件
 homework_6/selflrn
-# 忽视homework_6里面的连接MySQL的配置文件
-homework_6/config.json
 
