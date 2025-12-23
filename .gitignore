@@ -4,21 +4,27 @@
 __MACOSX
 # 忽视jupyter的检查点文件夹
 **/.ipynb_checkpoints
-# 忽视作业任务todo
-todo
-# 忽视obsidian的配置文件
+**/__pycache__
+# 忽视配置文件
 .obsidian
-# 忽略json配置文件
+.idea
+.cursorignore
 **/config.json
 
-# 忽视homework_3里面的学习文件
+# 特殊文件夹
+shudlrn/
+aiama/
+todo/
+*/todo
+# homework_3里面的学习文件
 homework_3/html_learn
-# 忽视homework_3里面的第一次下载的csv文件
+# homework_3里面的第一次下载的csv文件
 homework_3/original
-
-# 忽视homework_6里面的学习文件
+# homework_6里面的学习文件
 homework_6/selflrn
 
-shudlrn
-
-aiama
+# final-asssignment 里面的文件
+*/maybeuseful/
+final-asssignment/NeteaseMusicCrawler/config.json
+final-asssignment/NeteaseMusicCrawler/othercrawler/
+*/useless
