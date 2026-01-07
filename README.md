@@ -1,4 +1,4 @@
-# REPO For Courses Starting On 0915
+# REPO For Courses Starting On 09152025
 
 ### 项目概述
 本仓库包含数据科学导论课程的作业项目。
@@ -11,3 +11,4 @@
 - **Lab5实验**：数据分析与建模
 - **Lab6实验**：深度学习方法
 - **Lab7实验**：基于表格类神经网络模型的分析
+- **期末大作业**：基于 MCP 的NeteaseCloudMusic评论区理解接口

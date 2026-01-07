@@ -1,5 +1,5 @@
-# 忽略所有PDF文件
-*.pdf
+# 忽略PDF文件夹
+pdfs/
 # 忽视macOS系统解压zip的文件自动生成的隐藏文件夹
 __MACOSX
 # 忽视jupyter的检查点文件夹
